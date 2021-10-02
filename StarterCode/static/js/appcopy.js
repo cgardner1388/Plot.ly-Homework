@@ -24,7 +24,7 @@ function displaySampleData(ID) {
 
 
 
-//function to create bar chart
+//Create Bar Chart
 function createBarChart(id) {
     console.log("createBarChart", id)
     d3.json("samples.json").then((data) => {
@@ -48,15 +48,15 @@ function createBarChart(id) {
         var dataBar = [traceBar];
 
         var layoutBar = {
-            title: "Top 10 Bacteria Cultures Found",
+            title: "Top 10 Bacteria",
         };
 
-        //plot the bar chart
+        //Plot Bar Chart
         Plotly.newPlot("bar", dataBar, layoutBar);
         var bubbleChart = d3.select("bubble");
     });
 };
-//fuction to create bubble chart
+//Bubble Chart
 
 var bubbleChart = d3.select("bubble");
 
@@ -91,7 +91,7 @@ function createBubbleChart(id){
 
 };
 
-//function to reset data
+//Reset Data
 function optionChanged(newID) {
     displaySampleData(newID);
     createBarChart(newID); 
